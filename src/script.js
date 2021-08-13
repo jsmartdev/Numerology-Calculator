@@ -43,39 +43,39 @@ document.getElementById("text").addEventListener("input", function() {
 }); 
 */
 
+// reduction of multi digit numbers down to single digits is always done by subtracting the lower number digit from the higher number
 
-
-//  calculate life path number
+//  calculate life path number , sum of all numbers in you birthdate
 
 function lifePathMath() {
 
 }
 
-// calculate birthday number
+// calculate birthday number, reduce the day of month you were born to a single digit number
 
 function birthdayMath() {
 
 }
 
-// calculate first impression number
+// calculate first impression number, reduce the sum of the month and day of birthdate to a single digit number
 
 function firstImpMath() {
 
 }
 
-// calculate inner soul number
+// calculate inner soul number, sum of all vowels in birth name, reduced down to single digit number
 
 function innerMath() {
 
 }
 
-// calculate character number 
+// calculate character number, sum of all consonants in birth name, reduced down to single digit
 
 function characterMath() {
 
 }
 
-// calculate destiny number
+// calculate destiny number, sum of all letters in birth name, reduced down to single digit
 
 function destinyMath() {
 
