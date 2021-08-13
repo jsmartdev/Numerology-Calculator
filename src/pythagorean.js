@@ -31,49 +31,53 @@ const key = {
     "z": 8
 }
 
+
+
 /* Calculation Functions */
 
-/* document.getElementById("text").addEventListener("input", function() {
+/* 
+document.getElementById("text").addEventListener("input", function() {
     let str = this.value.toLowerCase();
     let sum = [...str].map(c => numbers[c] || 0).reduce((a, b) => a + b, 0);
     console.log(sum);
-}); */
+}); 
+*/
 
 
 
 //  calculate life path number
 
-function lifePathNum() {
+function lifePathMath() {
 
 }
 
 // calculate birthday number
 
-function birthdayNum() {
+function birthdayMath() {
 
 }
 
 // calculate first impression number
 
-function firstImpNum() {
+function firstImpMath() {
 
 }
 
 // calculate inner soul number
 
-function innerSoulNum() {
+function innerMath() {
 
 }
 
 // calculate character number 
 
-function characterNum() {
+function characterMath() {
 
 }
 
 // calculate destiny number
 
-function destinyNum() {
+function destinyMath() {
 
 }
 
