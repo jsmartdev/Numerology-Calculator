@@ -31,5 +31,39 @@ const key = {
     z: 8
 }
 
+//  calculate life path number
 
+function lifePathNum() {
+
+}
+
+// calculate birthday number
+
+function birthdayNum() {
+
+}
+
+// calculate first impression number
+
+function firstImpNum() {
+
+}
+
+// calculate inner soul number
+
+function innerSoulNum() {
+
+}
+
+// calculate character number 
+
+function characterNum() {
+
+}
+
+// calculate destiny number
+
+function destinyNum() {
+
+}
 
