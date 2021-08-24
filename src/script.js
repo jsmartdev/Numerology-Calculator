@@ -31,16 +31,16 @@ const key = {
     "z": 8
 }
 
-// combine all names into one string, divide them into their letters and change them all to lowercase
+// combine all names into one string, and change them all to lowercase
 
 const convertNames = () => {
     let first = document.getElementById("firstName").value;
     let middle = document.getElementById("middleName").value;
     let last = document.getElementById("lastName").value;
     let full = first.concat(middle, last);
-    let lowerFull = full.toLowerCase();
-    return lowerFull;
-}
+    let lower = full.toLowerCase();
+    return lower;
+    }
 
 // reduction of multi digit numbers down to single digits is always done by subtracting the lower number digit from the higher number
 
