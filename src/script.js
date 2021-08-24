@@ -31,6 +31,8 @@ const key = {
     "z": 8
 }
 
+// function to divide names into their letters and change them all to lowercase
+
 
 
 /* Calculation Functions */
