@@ -31,23 +31,17 @@ const key = {
     "z": 8
 }
 
-// function to divide names into their letters and change them all to lowercase
+// combine all names into one string, divide them into their letters and change them all to lowercase
 
-
-
-/* Calculation Functions */
-
-/* 
-document.getElementById("text").addEventListener("input", function() {
-    let str = this.value.toLowerCase();
-    let sum = [...str].map(c => numbers[c] || 0).reduce((a, b) => a + b, 0);
-    console.log(sum);
-}); 
-*/
+function convertNames() {
+    
+}
 
 // reduction of multi digit numbers down to single digits is always done by subtracting the lower number digit from the higher number
 
-//  calculate life path number , sum of all numbers in you birthdate
+
+
+// calculate life path number , sum of all numbers in you birthdate
 
 function lifePathMath() {
 
