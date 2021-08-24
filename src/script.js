@@ -31,16 +31,8 @@ const key = {
     "z": 8
 }
 
-// combine all names into one string, and change them all to lowercase
 
-const convertNames = () => {
-    let first = document.getElementById("firstName").value;
-    let middle = document.getElementById("middleName").value;
-    let last = document.getElementById("lastName").value;
-    let full = first.concat(middle, last);
-    let lower = full.toLowerCase();
-    return lower;
-    }
+
 
 // reduction of multi digit numbers down to single digits is always done by subtracting the lower number digit from the higher number
 
@@ -63,6 +55,17 @@ function birthdayMath() {
 function firstImpMath() {
 
 }
+
+// combine all names into one string, and change them all to lowercase
+
+const convertNames = () => {
+    let first = document.getElementById("firstName").value;
+    let middle = document.getElementById("middleName").value;
+    let last = document.getElementById("lastName").value;
+    let full = first.concat(middle, last);
+    let lower = full.toLowerCase();
+    return lower;
+    }
 
 // calculate inner soul number, sum of all vowels in birth name, reduced down to single digit number
 
