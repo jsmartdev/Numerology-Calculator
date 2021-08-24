@@ -39,6 +39,7 @@ const convertNames = () => {
     let last = document.getElementById("lastName").value;
     let full = first.concat(middle, last);
     let lowerFull = full.toLowerCase();
+    return lowerFull;
 }
 
 // reduction of multi digit numbers down to single digits is always done by subtracting the lower number digit from the higher number
