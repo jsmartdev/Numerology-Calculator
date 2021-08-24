@@ -1,0 +1,6 @@
+#header-box, #heroImage-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
