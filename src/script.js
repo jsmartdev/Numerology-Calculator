@@ -49,24 +49,34 @@ let year = document.getElementById("birth-year").value;
 // calculate "Life Path Number" , sum of all numbers in you birthdate
 
 let lifePathMath = () => {
-    let dayString = day.toString();
-    if (dayString.length = 1) {
-        lifePathNum += day;
-    }
-    else {
-        let add = 0;
-        for (i = 0; i < dayString.length; i++) {
-            add += dayString[i];
-        }
-        lifePathNum += add;
-    }
-    console.log(lifePathNum);
+    
 }
 
 // calculate "Birthday Number" - reduce the day of month you were born to a single digit number
 
 let birthdayMath = () => {
-
+    let dayDigits = (""+ day).split("");
+    if (dayDigits.length > 1) {
+        let add = 0;
+        for (i = 0; i < dayDigits.length; i++) {
+            let str = dayDigits[i];
+            let num = Number(str);
+            add += num;
+        }
+        let addDigits = (""+ add).split("");
+        if (addDigits.length > 1) {
+            let day = add;
+            birthdayMath();
+        }
+        else {
+            birthdayNum += add;
+            console.log(birthdayNum);
+        }    
+    }
+    else {
+        birthdayNum += day;
+        console.log(birthdayNum);
+    }
 }
 
 // calculate "First Impression Number" - reduce the sum of the month and day of birthdate to a single digit number
