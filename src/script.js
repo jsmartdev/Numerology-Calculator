@@ -38,41 +38,56 @@ let innerSoulNum = 0;
 let characterNum = 0;
 let destinyNum = 0;
 
-let firstName = document.getElementById("firstName")
+let firstName = document.getElementById("first-name").value;
+let lastName = document.getElementById("last-name").value;
+let day = document.getElementById("birth-day").value;
+let month = document.getElementById("birth-month").value;
+let year = document.getElementById("birth-year").value;
 
 // reduction of multi digit numbers down to single digits is always done by subtracting the lower number digit from the higher number
 
-// calculate life path number , sum of all numbers in you birthdate
+// calculate "Life Path Number" , sum of all numbers in you birthdate
 
 let lifePathMath = () => {
-    
+    let dayString = day.toString();
+    if (dayString.length = 1) {
+        lifePathNum += day;
+    }
+    else {
+        let add = 0;
+        for (i = 0; i < dayString.length; i++) {
+            add += dayString[i];
+        }
+        lifePathNum += add;
+    }
+    console.log(lifePathNum);
 }
 
-// calculate birthday number, reduce the day of month you were born to a single digit number
+// calculate "Birthday Number" - reduce the day of month you were born to a single digit number
 
 let birthdayMath = () => {
 
 }
 
-// calculate first impression number, reduce the sum of the month and day of birthdate to a single digit number
+// calculate "First Impression Number" - reduce the sum of the month and day of birthdate to a single digit number
 
 let impressionMath = () => {
 
 }
 
-// calculate inner soul number, sum of all vowels in birth name, reduced down to single digit number
+// calculate "Inner Soul Number" - sum of all vowels in birth name, reduced down to single digit number
 
 function innerSoulMath() {
 
 }
 
-// calculate character number, sum of all consonants in birth name, reduced down to single digit
+// calculate "Character Number" - sum of all consonants in birth name, reduced down to single digit
 
 function characterMath() {
 
 }
 
-// calculate destiny number, sum of all letters in birth name, reduced down to single digit
+// calculate "Destiny Number" - sum of all letters in birth name, reduced down to single digit
 
 function destinyMath() {
 
