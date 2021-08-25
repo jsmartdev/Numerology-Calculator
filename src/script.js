@@ -35,8 +35,8 @@ const key = {
 
 // calculate life path number , sum of all numbers in you birthdate
 
-function lifePathMath() {
-
+let lifePathMath = () => {
+    
 }
 
 // calculate birthday number, reduce the day of month you were born to a single digit number
