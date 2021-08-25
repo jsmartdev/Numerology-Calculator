@@ -31,6 +31,15 @@ const key = {
     "z": 8
 }
 
+let lifePathNum = 0;
+let birthdayNum = 0;
+let impressionNum = 0;
+let innerSoulNum = 0;
+let characterNum = 0;
+let destinyNum = 0;
+
+let firstName = document.getElementById("firstName")
+
 // reduction of multi digit numbers down to single digits is always done by subtracting the lower number digit from the higher number
 
 // calculate life path number , sum of all numbers in you birthdate
@@ -41,19 +50,19 @@ let lifePathMath = () => {
 
 // calculate birthday number, reduce the day of month you were born to a single digit number
 
-function birthdayMath() {
+let birthdayMath = () => {
 
 }
 
 // calculate first impression number, reduce the sum of the month and day of birthdate to a single digit number
 
-function firstImpMath() {
+let impressionMath = () => {
 
 }
 
 // calculate inner soul number, sum of all vowels in birth name, reduced down to single digit number
 
-function innerMath() {
+function innerSoulMath() {
 
 }
 
