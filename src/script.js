@@ -158,7 +158,6 @@ let impressionMath = () => {
         }
         else {
             impressionNum += sum;
-            
         }    
 }
 
@@ -176,14 +175,19 @@ function impressionLoop(param) {
         }
         else {
             impressionNum += sum;
-            
         }    
 }
 
 // calculate "Inner Soul Number" - sum of all vowels in birth name, reduced down to single digit number
 
-let innerSoulMath = () => {
+/*  document.getElementById("text").addEventListener("input", function() {
+    let str = this.value.toLowerCase();
+    let sum = [...str].map(c => numbers[c] || 0).reduce((a, b) => a + b, 0);
+    console.log(sum);
+    });  */
 
+let innerSoulMath = () => {
+    
 }
 
 // calculate "Character Number" - sum of all consonants in birth name, reduced down to single digit
@@ -209,6 +213,14 @@ let destinyMath = () => {
 
 
 /* Event Handlers */
+
+
+document.getElementById("form-button").addEventListener("click", handleSubmit);
+
+
+function handleSubmit() {
+    console.log(firstName.toLowerCase());
+}
 
 
 
