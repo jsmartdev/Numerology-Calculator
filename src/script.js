@@ -62,8 +62,8 @@ let lifePathMath = () => {
     for (i = 0; i < yearDigits.length; i++) {
         lifeDigits.push(yearDigits[i]);
         let sum = 0;
-        for (i = 0; i < impDigits.length; i++) {
-        let str = impDigits[i];
+        for (i = 0; i < lifeDigits.length; i++) {
+        let str = lifeDigits[i];
             let num = Number(str);
             sum += num;
         }
@@ -87,7 +87,7 @@ function lifeLoop(param) {
         }
         let sumDigits = (""+ sum).split("");
         if (sumDigits.length > 1) {
-            birthdayLoop(sum);
+            lifeLoop(sum);
         }
         else {
             lifePathNum += sum;
