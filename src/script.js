@@ -81,6 +81,8 @@ let populateArray = (entry, array) => {
     }
 }
 
+// just like populateArray but only populates with vowels
+
 let populateVowels = () => {
     for (i = 0; i < fullName.length; i++) {
         if (fullName[i] = "a" || "e" || "i" || "o" || "u" || "y") {
