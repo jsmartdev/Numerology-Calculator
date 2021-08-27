@@ -92,6 +92,8 @@ let populateVowels = () => {
     }
 }
 
+// just like populateArray but only populates with consonants
+
 let populateConsonants = () => {
     for (i = 0; i < fullName.length; i++) {
         if (fullName[i] != "a" || "e" || "i" || "o" || "u" || "y") {
