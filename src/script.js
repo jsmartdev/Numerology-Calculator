@@ -194,11 +194,6 @@ getUltimate = () => {
     getNum(ultimateArray, ultimateNum);
 }
 
-
-
-
-
-
 /* Template Functions */
 
 
@@ -208,14 +203,6 @@ getUltimate = () => {
 
 
 /* Event Handlers */
-
-
-document.getElementById("form-button").addEventListener("click", handleSubmit);
-
-
-function handleSubmit() {
-    console.log(firstName.toLowerCase());
-}
 
 
 
