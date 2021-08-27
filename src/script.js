@@ -104,7 +104,7 @@ let populateConsonants = () => {
     }
 }
 
-// adds all numbers in a given array
+// adds up all numbers in a given array
 
 let addArray = (array) => {
     sum -= sum;
