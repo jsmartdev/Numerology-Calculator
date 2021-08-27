@@ -117,6 +117,10 @@ let addArray = (array) => {
     sum += plus;
 }
 
+// takes a given array and adds up the numbers within
+// if the answer isnt a single digit number it repeats the process with the new digits
+// repeats the process until it adds up to a single digit number
+
 let getNum = (arr, num) => {
     addArray(arr);
     let sumString = sum.toString();
