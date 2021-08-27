@@ -31,6 +31,8 @@ const key = {
     "z": 8
 }
 
+// final numbers
+
 let lifePathNum = 0;
 let birthdayNum = 0;
 let impressionNum = 0;
@@ -39,13 +41,19 @@ let personalityNum = 0;
 let destinyNum = 0;
 let ultimateNum = 0;
 
+// utility numbers
+
 let firstNum = 0;
 let lastNum = 0;
 let dayNum = 0;
 let monthNum = 0;
 let yearNum = 0;
 
+// placeholder variable for adding up the numbers in each array
+
 let sum = 0;
+
+// "entry" values
 
 let firstName = document.getElementById("first-name").value.toLowerCase();
 let lastName = document.getElementById("last-name").value;
@@ -53,6 +61,8 @@ let fullName = firstName.concat(lastName);
 let day = document.getElementById("birth-day").value;
 let month = document.getElementById("birth-month").value;
 let year = document.getElementById("birth-year").value;
+
+// "arr" arrays
 
 let firstArray = [];
 let lastArray = [];
@@ -106,11 +116,11 @@ let populateConsonants = () => {
 
 // adds up all numbers in a given array
 
-let addArray = (array) => {
+let addArray = (arr) => {
     sum -= sum;
     let plus = 0;
-    for (i = 0; i < array.length; i++) {
-        let str = array[i];
+    for (i = 0; i < arr.length; i++) {
+        let str = arr[i];
         let add = Number(str);
         plus += add;
     }
@@ -134,17 +144,6 @@ let getNum = (arr, num) => {
     else {
         num += sum;
     }
-}
-
-let getBirthday = () => {
-    populateArray(day, dayArray);
-    getNum(dayArray, birthdayNum);
-}
-
-let getImpression = () => {
-    let dayMonth = dayNum + monthNum;
-    populateArray(daymonth, impressionArray);
-    getNum(impressionArray, impressionNum);
 }
 
 // calculates "Life Path Number"
