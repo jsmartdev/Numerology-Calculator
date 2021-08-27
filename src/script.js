@@ -147,6 +147,8 @@ let getImpression = () => {
     getNum(impressionArray, impressionNum);
 }
 
+// calculates "Life Path Number"
+
 let getLifePath = () => {
     populateArray(year, yearArray);
     populateArray(month, monthArray);
