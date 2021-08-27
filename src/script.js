@@ -161,6 +161,8 @@ let getLifePath = () => {
     getNum(lifePathArray, lifePathNum);
 }
 
+// calculates "Personality Number"
+
 let getPersonality = () => {
     populateConsonants();
     getNum(consonantArray, personalityNum);
