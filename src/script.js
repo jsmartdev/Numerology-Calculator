@@ -64,7 +64,8 @@ let yearArray = [];
 let destinyArray = [];
 let ultimateArray = [];
 
-// takes each form entry and creates an array containing each of its letters or digits
+// takes a given variable (word or number) or other number and creates an array containing each of its letters or digits
+// if the given variable is a word it refers to the "key" and populates the array with each letter's corresponding number
 
 let populateArray = (entry, array) => {
     let str = entry.toString().toLowerCase();
@@ -102,6 +103,8 @@ let populateConsonants = () => {
         }
     }
 }
+
+// adds all numbers in a given array
 
 let addArray = (array) => {
     sum -= sum;
