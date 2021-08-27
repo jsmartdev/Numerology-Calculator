@@ -187,6 +187,8 @@ let getDestiny = () => {
     getNum(destinyArray, destinyNum);
 }
 
+// calculates "Ultimate Number"
+
 getUltimate = () => {
     let destinyLife = destinyNum + lifePathNum;
     populateArray(destinyLife, ultimateArray);
