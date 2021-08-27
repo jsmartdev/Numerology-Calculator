@@ -38,19 +38,118 @@ let innerSoulNum = 0;
 let characterNum = 0;
 let destinyNum = 0;
 
-let firstName = document.getElementById("first-name").value;
+let firstNum = 0;
+let lastNum = 0;
+let dayNum = 0;
+let monthNum = 0;
+let yearNum = 0;
+
+let firstName = document.getElementById("first-name").value.toLowerCase();
 let lastName = document.getElementById("last-name").value;
 let day = document.getElementById("birth-day").value;
 let month = document.getElementById("birth-month").value;
 let year = document.getElementById("birth-year").value;
 
-// reduction of multi digit numbers down to single digits is always done by subtracting the lower number digit from the higher number
+let nameArray = [];
+let dayArray = [];
+let monthArray = [];
+let yearArray = [];
+
+let  getDayArray = () => {
+    let dayString = day.toString();
+    for (i = 0; i < dayString.length; i++) {
+        dayArray.push(dayString[i]);
+    }
+}
+
+let getMonthArray = () => {
+    let monthString = month.toString();
+    for (i = 0; i < monthString.length; i++) {
+        monthArray.push(monthString[i]);
+    }
+}
+
+let getYearArray = () => {
+    let yearString = year.toString();
+    for (i = 0; i < yearString.length; i++) {
+        yearArray.push(yearString[i]);
+    }
+}
+
+let reduce = (entry, array) => {
+    let str = entry.toString().toLowerCase();
+    let tempArray = (""+ str).split("");
+    for (i = 0; i < tempArray.length; i++) {
+            let char = tempArray[i];
+            if (isNaN(char) === false) {
+                let num = Number(char);
+                array.push(num);
+            }
+            else {
+                array.push(char);
+            }
+    }
+}
+
+let populateArray = (entry, array) => {
+    let str = entry.toString().toLowerCase();
+    let tempArray = (""+ str).split("");
+    for (i = 0; i < tempArray.length; i++) {
+            let char = tempArray[i];
+            if (isNaN(char) === false) {
+                let num = Number(char);
+                array.push(num);
+            }
+            else {
+                array.push(key[char]);
+            }
+    }
+}
+
+
+
+// calculate "Birthday Number" - add all digits of day of month of birth, 
+// then add the result's digits together, keep repeating until you have a single digit number
+
+let reduceArray = (array, num) => {
+    let sum = 0;
+    for (i = 0; i < array.length; i++) {
+        let str = array[i];
+        let num = Number(str);
+        sum += num;
+    }
+    let sumArray = (""+ sum).split("");
+    if (sumArray.length > 1) {
+        reduceArray(sumArray, num);
+    }
+    else {
+        num += sum;
+    }    
+}
+
+
+let birthdayLoop = (param, num) => {
+    let paramArray = (""+ param).split("");
+    let sum = 0;
+    for (i = 0; i < paramArray.length; i++) {
+        let str = paramArray[i];
+        let num = Number(str);
+        sum += num;
+    }
+    let sumArray = (""+ sum).split("");
+    if (sumDigits.length > 1) {
+        birthdayLoop(sum);
+    }
+    else {
+        num += sum;
+    } 
+}        
 
 // calculate "Life Path Number" , sum of all numbers in you birthdate
 
 let lifePathMath = () => {
-    lifeDigits = [];
-    let dayDigits = (""+ day).split("");
+    lifeArray = [];
+    let dayArray = (""+ day).split("");
     for (i = 0; i < dayDigits.length; i++) {
         lifeDigits.push(dayDigits[i]);
     }
@@ -63,7 +162,7 @@ let lifePathMath = () => {
         lifeDigits.push(yearDigits[i]);
         let sum = 0;
         for (i = 0; i < lifeDigits.length; i++) {
-        let str = lifeDigits[i];
+            let str = lifeDigits[i];
             let num = Number(str);
             sum += num;
         }
@@ -94,46 +193,7 @@ function lifeLoop(param) {
         }    
 }
 
-// calculate "Birthday Number"
 
-let birthdayMath = () => {
-    let dayDigits = (""+ day).split("");
-    if (dayDigits.length > 1) {
-        let sum = 0;
-        for (i = 0; i < dayDigits.length; i++) {
-            let str = dayDigits[i];
-            let num = Number(str);
-            sum += num;
-        }
-        let sumDigits = (""+ sum).split("");
-        if (sumDigits.length > 1) {
-            birthdayLoop(sum);
-        }
-        else {
-            birthdayNum += sum;
-        }    
-    }
-    else {
-        birthdayNum += day;
-    }
-}
-
-function birthdayLoop(param) {
-    let paramDigits = (""+ param).split("");
-    let sum = 0;
-        for (i = 0; i < paramDigits.length; i++) {
-            let str = paramDigits[i];
-            let num = Number(str);
-            sum += num;
-        }
-        let sumDigits = (""+ sum).split("");
-        if (sumDigits.length > 1) {
-            birthdayLoop(sum);
-        }
-        else {
-            birthdayNum += sum;
-        }    
-} 
 // calculate "First Impression Number" - reduce the sum of the month and day of birthdate to a single digit number
 
 let impressionMath = () => {
