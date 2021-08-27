@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-// an object key to translate each letter to its corresponding number
+// an object key to translate each letter of a name to its corresponding number
 
 const key = {
     "a": 1,
