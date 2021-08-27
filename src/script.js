@@ -168,6 +168,8 @@ let getPersonality = () => {
     getNum(consonantArray, personalityNum);
 }
 
+// calculates "Heart's Desire Number"
+
 let getheartsDesire = () => {
     populateVowels();
     getNum(vowelArray, heartsDesireNum);
