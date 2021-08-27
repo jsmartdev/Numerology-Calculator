@@ -170,10 +170,12 @@ let getPersonality = () => {
 
 // calculates "Heart's Desire Number"
 
-let getheartsDesire = () => {
+let getHeartsDesire = () => {
     populateVowels();
     getNum(vowelArray, heartsDesireNum);
 }
+
+// calculates "Destiny Number"
 
 let getDestiny = () => {
     populateArray(firstName, firstArray);
