@@ -34,9 +34,10 @@ const key = {
 let lifePathNum = 0;
 let birthdayNum = 0;
 let impressionNum = 0;
-let innerSoulNum = 0;
-let characterNum = 0;
+let heartsDesireNum = 0;
+let personalityNum = 0;
 let destinyNum = 0;
+let ultimateNum = 0;
 
 let firstNum = 0;
 let lastNum = 0;
@@ -44,56 +45,30 @@ let dayNum = 0;
 let monthNum = 0;
 let yearNum = 0;
 
+let sum = 0;
+
 let firstName = document.getElementById("first-name").value.toLowerCase();
 let lastName = document.getElementById("last-name").value;
+let fullName = firstName.concat(lastName);
 let day = document.getElementById("birth-day").value;
 let month = document.getElementById("birth-month").value;
 let year = document.getElementById("birth-year").value;
 
-let nameArray = [];
+let firstArray = [];
+let lastArray = [];
+let vowelArray = [];
+let consonantArray = [];
 let dayArray = [];
 let monthArray = [];
 let yearArray = [];
+let destinyArray = [];
+let ultimateArray = [];
 
-let  getDayArray = () => {
-    let dayString = day.toString();
-    for (i = 0; i < dayString.length; i++) {
-        dayArray.push(dayString[i]);
-    }
-}
-
-let getMonthArray = () => {
-    let monthString = month.toString();
-    for (i = 0; i < monthString.length; i++) {
-        monthArray.push(monthString[i]);
-    }
-}
-
-let getYearArray = () => {
-    let yearString = year.toString();
-    for (i = 0; i < yearString.length; i++) {
-        yearArray.push(yearString[i]);
-    }
-}
-
-let reduce = (entry, array) => {
-    let str = entry.toString().toLowerCase();
-    let tempArray = (""+ str).split("");
-    for (i = 0; i < tempArray.length; i++) {
-            let char = tempArray[i];
-            if (isNaN(char) === false) {
-                let num = Number(char);
-                array.push(num);
-            }
-            else {
-                array.push(char);
-            }
-    }
-}
+// takes each form entry and creates an array containing each of its letters or digits
 
 let populateArray = (entry, array) => {
     let str = entry.toString().toLowerCase();
-    let tempArray = (""+ str).split("");
+    let tempArray = ("" + str).split("");
     for (i = 0; i < tempArray.length; i++) {
             let char = tempArray[i];
             if (isNaN(char) === false) {
@@ -106,161 +81,101 @@ let populateArray = (entry, array) => {
     }
 }
 
+let populateVowels = () => {
+    for (i = 0; i < fullName.length; i++) {
+        if (fullName[i] = "a" || "e" || "i" || "o" || "u" || "y") {
+            let char = fullName[i];
+            vowelArray.push(key[char]);
+        }
+    }
+}
 
+let populateConsonants = () => {
+    for (i = 0; i < fullName.length; i++) {
+        if (fullName[i] != "a" || "e" || "i" || "o" || "u" || "y") {
+            let char = fullName[i];
+            consonantArray.push(key[char]);
+        }
+    }
+}
 
-// calculate "Birthday Number" - add all digits of day of month of birth, 
-// then add the result's digits together, keep repeating until you have a single digit number
-
-let reduceArray = (array, num) => {
-    let sum = 0;
+let addArray = (array) => {
+    sum -= sum;
+    let plus = 0;
     for (i = 0; i < array.length; i++) {
         let str = array[i];
-        let num = Number(str);
-        sum += num;
+        let add = Number(str);
+        plus += add;
     }
-    let sumArray = (""+ sum).split("");
-    if (sumArray.length > 1) {
-        reduceArray(sumArray, num);
+    sum += plus;
+}
+
+let getNum = (arr, num) => {
+    addArray(arr);
+    let sumString = sum.toString();
+    if (sumString.length > 1 && sum != 11 && sum != 22) {
+        while (sumString.length > 1 && sum != 11 && sum != 22) {
+            let sumArray = (""+ sum).split("");
+            addArray(sumArray)
+        }
+        num += sum;
     }
     else {
         num += sum;
-    }    
-}
-
-
-let birthdayLoop = (param, num) => {
-    let paramArray = (""+ param).split("");
-    let sum = 0;
-    for (i = 0; i < paramArray.length; i++) {
-        let str = paramArray[i];
-        let num = Number(str);
-        sum += num;
-    }
-    let sumArray = (""+ sum).split("");
-    if (sumDigits.length > 1) {
-        birthdayLoop(sum);
-    }
-    else {
-        num += sum;
-    } 
-}        
-
-// calculate "Life Path Number" , sum of all numbers in you birthdate
-
-let lifePathMath = () => {
-    lifeArray = [];
-    let dayArray = (""+ day).split("");
-    for (i = 0; i < dayDigits.length; i++) {
-        lifeDigits.push(dayDigits[i]);
-    }
-    let monthDigits = (""+ month).split("");
-    for (i = 0; i < monthDigits.length; i++) {
-        lifeDigits.push(monthDigits[i]);
-    }
-    let yearDigits = (""+ year).split("");
-    for (i = 0; i < yearDigits.length; i++) {
-        lifeDigits.push(yearDigits[i]);
-        let sum = 0;
-        for (i = 0; i < lifeDigits.length; i++) {
-            let str = lifeDigits[i];
-            let num = Number(str);
-            sum += num;
-        }
-        let sumDigits = (""+ sum).split("");
-        if (sumDigits.length > 1) {
-            lifeLoop(sum);
-        }
-        else {
-            lifePathNum += sum;
-        }    
     }
 }
 
-function lifeLoop(param) {
-    let paramDigits = (""+ param).split("");
-    let sum = 0;
-        for (i = 0; i < paramDigits.length; i++) {
-            let str = paramDigits[i];
-            let num = Number(str);
-            sum += num;
-        }
-        let sumDigits = (""+ sum).split("");
-        if (sumDigits.length > 1) {
-            lifeLoop(sum);
-        }
-        else {
-            lifePathNum += sum;
-        }    
+let getBirthday = () => {
+    populateArray(day, dayArray);
+    getNum(dayArray, birthdayNum);
+}
+
+let getImpression = () => {
+    let dayMonth = dayNum + monthNum;
+    populateArray(daymonth, impressionArray);
+    getNum(impressionArray, impressionNum);
+}
+
+let getLifePath = () => {
+    populateArray(year, yearArray);
+    populateArray(month, monthArray);
+    populateArray(day, dayArray);
+    getNum(yearArray, yearNum);
+    getNum(monthArray, monthNum);
+    getNum(dayArray, dayNum);
+    let dayMonthYear = dayNum + monthNum + yearNum;
+    populateArray(dayMonthYear, lifePathArray);
+    getNum(lifePathArray, lifePathNum);
+}
+
+let getPersonality = () => {
+    populateConsonants();
+    getNum(consonantArray, personalityNum);
+}
+
+let getheartsDesire = () => {
+    populateVowels();
+    getNum(vowelArray, heartsDesireNum);
+}
+
+let getDestiny = () => {
+    populateArray(firstName, firstArray);
+    populateArray(lastName, lastArray);
+    getNum(firstArray, firstNum);
+    getNum(lastArray, lastNum);
+    let names = firstNum + lastNum;
+    populateArray(names, destinyArray);
+    getNum(destinyArray, destinyNum);
+}
+
+getUltimate = () => {
+    let destinyLife = destinyNum + lifePathNum;
+    populateArray(destinyLife, ultimateArray);
+    getNum(ultimateArray, ultimateNum);
 }
 
 
-// calculate "First Impression Number" - reduce the sum of the month and day of birthdate to a single digit number
 
-let impressionMath = () => {
-    let impDigits = [];
-    let dayDigits = (""+ day).split("");
-    for (i = 0; i < dayDigits.length; i++) {
-        impDigits.push(dayDigits[i]);
-    }
-    let monthDigits = (""+ month).split("");
-    for (i = 0; i < monthDigits.length; i++) {
-        impDigits.push(monthDigits[i]);
-    }
-    let sum = 0;
-    for (i = 0; i < impDigits.length; i++) {
-        let str = impDigits[i];
-            let num = Number(str);
-            sum += num;
-    }
-    let sumDigits = (""+ sum).split("");
-        if (sumDigits.length > 1) {
-            impressionLoop(sum);
-        }
-        else {
-            impressionNum += sum;
-        }    
-}
-
-function impressionLoop(param) {
-    let paramDigits = (""+ param).split("");
-    let sum = 0;
-        for (i = 0; i < paramDigits.length; i++) {
-            let str = paramDigits[i];
-            let num = Number(str);
-            sum += num;
-        }
-        let sumDigits = (""+ sum).split("");
-        if (sumDigits.length > 1) {
-            impressionLoop(sum);
-        }
-        else {
-            impressionNum += sum;
-        }    
-}
-
-// calculate "Inner Soul Number" - sum of all vowels in birth name, reduced down to single digit number
-
-/*  document.getElementById("text").addEventListener("input", function() {
-    let str = this.value.toLowerCase();
-    let sum = [...str].map(c => numbers[c] || 0).reduce((a, b) => a + b, 0);
-    console.log(sum);
-    });  */
-
-let innerSoulMath = () => {
-    
-}
-
-// calculate "Character Number" - sum of all consonants in birth name, reduced down to single digit
-
-let characterMath = () => {
-
-}
-
-// calculate "Destiny Number" - sum of all letters in birth name, reduced down to single digit
-
-let destinyMath = () => {
-
-}
 
 
 
