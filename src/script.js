@@ -96,7 +96,11 @@ let populateArray = (entry, array) => {
 
 let populateVowels = () => {
     for (i = 0; i < fullName.length; i++) {
-        if (fullName[i] = "a" || "e" || "i" || "o" || "u" || "y") {
+        if (fullName[i] = "a" || "e" || "i" || "o" || "u") {
+            let char = fullName[i];
+            vowelArray.push(key[char]);
+        }
+        else if (fullName[i] = "y" && (fullname[i+1] != "a" || "e" || "i" || "o" || "u")) {
             let char = fullName[i];
             vowelArray.push(key[char]);
         }
@@ -107,7 +111,11 @@ let populateVowels = () => {
 
 let populateConsonants = () => {
     for (i = 0; i < fullName.length; i++) {
-        if (fullName[i] != "a" || "e" || "i" || "o" || "u" || "y") {
+        if (fullName[i] != "a" || "e" || "i" || "o" || "u") {
+            let char = fullName[i];
+            consonantArray.push(key[char]);
+        }
+        else if (fullName[i] = "y" && ((fullname[i+1] = "a" || "e" || "i" || "o" || "u") || (fullname[i-1] = "a" || "e" || "i" || "o" || "u"))) {
             let char = fullName[i];
             consonantArray.push(key[char]);
         }
@@ -178,7 +186,7 @@ let getHeartsDesire = () => {
 
 let getDestiny = () => {
     populateArray(firstName, firstArray);
-    populateArray(lastName, lastArray);
+    populateArray(lastName, lastArray); 
     getNum(firstArray, firstNum);
     getNum(lastArray, lastNum);
     let names = firstNum + lastNum;
